@@ -8,15 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
     copyButton.classList.add("copy-btn");
 
     // Style the button
-    copyButton.style.position = "absolute";
-    copyButton.style.top = "10px";
-    copyButton.style.right = "10px";
-    copyButton.style.zIndex = "10";
-    copyButton.style.padding = "5px 10px";
-    copyButton.style.background = "#333";
-    copyButton.style.color = "white";
-    copyButton.style.border = "none";
-    copyButton.style.cursor = "pointer";
+    copyButton.style.cssText = `
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      padding: 5px 10px;
+      background-color: var(--accent-color);
+      color: var(--text-primary);
+      border: none;
+      cursor: pointer;
+      font-family: "JetBrains Mono", monospace;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    `;
 
     // Wrap code block in a relative positioned container
     const wrapper = document.createElement("div");
@@ -31,8 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .writeText(block.textContent)
         .then(() => {
           copyButton.textContent = "Copied!";
+          copyButton.style.backgroundColor = "var(--link-color)";
           setTimeout(() => {
             copyButton.textContent = "Copy";
+            copyButton.style.backgroundColor = "var(--accent-color)";
           }, 2000);
         })
         .catch((err) => {

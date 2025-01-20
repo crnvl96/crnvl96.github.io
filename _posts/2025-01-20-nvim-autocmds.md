@@ -3,7 +3,7 @@ layout: post
 slug: nvim-insight-autocmd
 title: Nvim Insights - A More Elegant Approach to Autocommands
 category: [nvim]
-custom_js: copy_code_block
+custom_js: [copy_code_block, back_to_top_btn]
 ---
 
 <img class="post-img" src="/assets/images/nvim-logo.png" alt="Neovim Logo" width="300" height="200">
@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 ```
 
-While this approach works, I encountered a subtle challenge when implementing a cursor position preservation technique during yanking operations (got it from [here](https://nanotipsforvim.prose.sh/sticky-yank), thankd for the tip!)
+While this approach works, I encountered a subtle challenge when implementing a cursor position preservation technique during yanking operations, which I got from [nanotipsforvim](https://nanotipsforvim.prose.sh/sticky-yank).
 
 My initial implementation looked like this:
 
