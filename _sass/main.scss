@@ -1,38 +1,17 @@
-// -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(1);
-  img {
-    filter: invert(1);
-
-    &.ioda {
-      filter: invert(0);
-    }
-  }
-  .emoji {
-    filter: invert(1);
-  }
-  iframe {
-    filter: invert(1);
-  }
+:root {
+  --bg-primary: #121212;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --accent-color: #4a4a4a;
+  --highlight-color: #2c2c2c;
+  --link-color: #6ad4a0;
+  --link-hover-color: #4af0b0;
 }
 
-body[a="dark"] {
-  @include dark-appearance;
-}
-
-@media (prefers-color-scheme: dark) {
-  body[a="auto"] {
-    @include dark-appearance;
-  }
-}
-// -------------------------------------------- //
-
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
 html,
 body {
-  background: white;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 html {
@@ -41,41 +20,12 @@ html {
 }
 
 body {
-  color: black;
-  font-family: monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.6;
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
-}
-
-.post-meta {
-  text-align: right;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 3rem;
-}
-
-hr {
-  margin: 2rem 0;
-}
-
-p {
-  margin: 1rem 0;
-}
-
-li {
-  margin: 0.4rem 0;
-}
-
-*:target {
-  background: yellow;
 }
 
 .w {
@@ -84,33 +34,43 @@ li {
   padding: 4rem 2rem;
 }
 
-hr {
-  text-align: center;
-  border: 0;
-
-  &:before {
-    content: "/////";
-  }
-  &:after {
-    content: attr(data-content) "/////";
-  }
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+  color: var(--text-primary);
 }
 
-table {
-  width: 100%;
+p {
+  margin: 1rem 0;
+  color: var(--text-secondary);
 }
 
-table,
-th,
-td {
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4rem;
+li {
+  margin: 0.4rem 0;
+}
+
+.post-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 code {
-  color: white;
-  background: black;
+  color: var(--text-primary);
+  background: var(--highlight-color);
+  font-family: "JetBrains Mono", monospace;
 }
 
 div.highlighter-rouge code {
@@ -118,20 +78,239 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre;
   padding: 1rem;
+  line-height: 1.4;
+}
+
+.highlight {
+  background-color: var(--highlight-color);
+
+  .c {
+    color: #5f875f;
+  }
+  .err {
+    color: #df5f5f;
+  }
+  .k {
+    color: #87afdf;
+  }
+  .l {
+    color: #d7af5f;
+  }
+  .n {
+    color: #d0d0d0;
+  }
+  .o {
+    color: #f0f0f0;
+  }
+  .p {
+    color: #b2b2b2;
+  }
+  .cm {
+    color: #5f875f;
+  }
+  .cp {
+    color: #5f875f;
+  }
+  .c1 {
+    color: #5f875f;
+  }
+  .cs {
+    color: #5f875f;
+  }
+  .ge {
+    font-style: italic;
+  }
+  .gs {
+    font-weight: bold;
+  }
+  .kc {
+    color: #87afdf;
+  }
+  .kd {
+    color: #87afdf;
+  }
+  .kn {
+    color: #df5f5f;
+  }
+  .kp {
+    color: #87afdf;
+  }
+  .kr {
+    color: #87afdf;
+  }
+  .kt {
+    color: #dfaf5f;
+  }
+  .ld {
+    color: #d7af5f;
+  }
+  .m {
+    color: #d7af5f;
+  }
+  .s {
+    color: #afdf5f;
+  }
+  .na {
+    color: #dfdf5f;
+  }
+  .nb {
+    color: #87dfaf;
+  }
+  .nc {
+    color: #dfaf5f;
+  }
+  .no {
+    color: #87afdf;
+  }
+  .nd {
+    color: #dfaf5f;
+  }
+  .ni {
+    color: #dfdf5f;
+  }
+  .ne {
+    color: #df5f5f;
+  }
+  .nf {
+    color: #87dfaf;
+  }
+  .nl {
+    color: #87afdf;
+  }
+  .nn {
+    color: #d0d0d0;
+  }
+  .nx {
+    color: #d0d0d0;
+  }
+  .py {
+    color: #d0d0d0;
+  }
+  .nt {
+    color: #df5f5f;
+  }
+  .nv {
+    color: #87afdf;
+  }
+  .ow {
+    color: #f0f0f0;
+  }
+  .w {
+    color: #d0d0d0;
+  }
+  .mf {
+    color: #d7af5f;
+  }
+  .mh {
+    color: #d7af5f;
+  }
+  .mi {
+    color: #d7af5f;
+  }
+  .mo {
+    color: #d7af5f;
+  }
+  .sb {
+    color: #afdf5f;
+  }
+  .sc {
+    color: #afdf5f;
+  }
+  .sd {
+    color: #afdf5f;
+  }
+  .s2 {
+    color: #afdf5f;
+  }
+  .se {
+    color: #d7af5f;
+  }
+  .sh {
+    color: #afdf5f;
+  }
+  .si {
+    color: #afdf5f;
+  }
+  .sx {
+    color: #afdf5f;
+  }
+  .sr {
+    color: #87dfaf;
+  }
+  .s1 {
+    color: #afdf5f;
+  }
+  .ss {
+    color: #dfdf5f;
+  }
+  .bp {
+    color: #87dfaf;
+  }
+  .vc {
+    color: #87afdf;
+  }
+  .vg {
+    color: #87afdf;
+  }
+  .vi {
+    color: #87afdf;
+  }
+  .il {
+    color: #d7af5f;
+  }
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+  }
+}
+
+*:target {
+  background: var(--link-color);
+  color: var(--bg-primary);
+}
+
+.post-meta {
+  text-align: right;
+  color: var(--text-secondary);
+}
+
+hr {
+  margin: 2rem 0;
+  border: 0;
+  text-align: center;
+
+  &:before {
+    content: "/////";
+    color: var(--text-secondary);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: thin solid var(--accent-color);
+  padding: 0.4rem;
+  color: var(--text-secondary);
 }
 
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border: thin solid var(--accent-color);
   padding: 1rem;
+  color: var(--text-secondary);
 
   p {
     margin: 0;
   }
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
 }

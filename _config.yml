@@ -6,23 +6,14 @@ url: "https://crnvl96.dev"
 github_username:  crnvl96
 
 permalink: /:slug.html
-favicon: "favicon.png"
+favicon: "/assets/images/favicon.png"
 
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    css_class: "highlight"
-    span:
-      line_numbers: false
-    block:
-      line_numbers: false
-      start_line: 1
 
 theme_config:
-  appearance: "auto"
-  back_home_text: ".."
+  appearance: "dark"
+  back_home_text: "home"
   date_format: "%Y-%m-%d"
   show_description: false
   lowercase_titles: true
@@ -33,3 +24,7 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+include:
+  - _pages
+  - _archives
