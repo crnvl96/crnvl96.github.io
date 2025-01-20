@@ -1,0 +1,29 @@
+entries:
+  - title: me
+    entries:
+      - title: email
+        url: mailto:adran.carnavale@gmail.com
+      - title: github
+        url: http://github.com/crnvl96/
+      - title: linkedin
+        url: https://www.linkedin.com/in/adrancarnavale/
+
+  - title: all
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: see archive
+      show_more_url: archive.html
+
+  - title: categories
+    entries:
+      - title: nvim
+        post_list:
+          limit: 3
+          category: nvim
+          show_more: true
+          show_more_text: more posts
+          show_more_url: archive-nvim.html
+
+  - title: rss
+    url: feed.xml

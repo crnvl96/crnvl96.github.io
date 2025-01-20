@@ -1,0 +1,35 @@
+title: Adran Carnavale
+email: adran.carnavale@gmail.com
+description: thoughts
+baseurl: ""
+url: "https://crnvl96.dev"
+github_username:  crnvl96
+
+permalink: /:slug.html
+favicon: "favicon.png"
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+theme_config:
+  appearance: "auto"
+  back_home_text: ".."
+  date_format: "%Y-%m-%d"
+  show_description: false
+  lowercase_titles: true
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
