@@ -2,7 +2,6 @@
 layout: post
 slug: nvim-insight-autocmd
 title: Nvim Insights - A More Elegant Approach to Autocommands
-category: [nvim]
 custom_js: [copy_code_block, back_to_top_btn]
 ---
 
