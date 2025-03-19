@@ -3,28 +3,22 @@ email: contact@adrancarnavale.com
 description: thoughts
 baseurl: ""
 url: "https://crnvl96.dev"
-github_username:  crnvl96
-
+github_username: crnvl96
 permalink: /:slug.html
 favicon: "/assets/images/favicon.png"
-
 markdown: kramdown
 highlighter: rouge
-
 theme_config:
   appearance: "dark"
   back_home_text: "home"
   date_format: "%Y-%m-%d"
   show_description: false
   lowercase_titles: true
-
 sass:
   style: compressed
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
 include:
   - _pages
   - _archives
