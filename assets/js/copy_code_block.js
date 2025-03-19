@@ -1,50 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const codeBlocks = document.querySelectorAll("code");
+  // Find all code blocks that are not Mermaid diagrams
+  const codeBlocks = document.querySelectorAll("pre code:not(.language-mermaid)");
 
   codeBlocks.forEach((block) => {
-    // Create copy button
+    // Create a copy button
     const copyButton = document.createElement("button");
+    copyButton.className = "copy-code-button";
     copyButton.textContent = "Copy";
-    copyButton.classList.add("copy-btn");
-
-    // Style the button
-    copyButton.style.cssText = `
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 10;
-      padding: 5px 10px;
-      background-color: var(--accent-color);
-      color: var(--text-primary);
-      border: none;
-      cursor: pointer;
-      font-family: "JetBrains Mono", monospace;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    `;
-
-    // Wrap code block in a relative positioned container
-    const wrapper = document.createElement("div");
-    wrapper.style.position = "relative";
-    block.parentNode.insertBefore(wrapper, block);
-    wrapper.appendChild(block);
-    wrapper.appendChild(copyButton);
-
-    // Copy functionality
     copyButton.addEventListener("click", () => {
-      navigator.clipboard
-        .writeText(block.textContent)
-        .then(() => {
-          copyButton.textContent = "Copied!";
-          copyButton.style.backgroundColor = "var(--link-color)";
-          setTimeout(() => {
-            copyButton.textContent = "Copy";
-            copyButton.style.backgroundColor = "var(--accent-color)";
-          }, 2000);
-        })
-        .catch((err) => {
-          console.error("Failed to copy:", err);
-        });
+      copyToClipboard(block.textContent);
+      copyButton.textContent = "Copied!";
+      setTimeout(() => {
+        copyButton.textContent = "Copy";
+      }, 2000);
     });
+
+    // Append the button to the code block
+    const pre = block.parentElement;
+    pre.style.position = "relative";
+    pre.appendChild(copyButton);
   });
+
+  function copyToClipboard(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
 });

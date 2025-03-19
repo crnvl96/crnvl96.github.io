@@ -1,11 +1,11 @@
 :root {
-  --bg-primary: #121212;
-  --text-primary: #e0e0e0;
-  --text-secondary: #a0a0a0;
-  --accent-color: #4a4a4a;
-  --highlight-color: #2c2c2c;
-  --link-color: #6ad4a0;
-  --link-hover-color: #4af0b0;
+  --bg-primary: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-color: #cccccc;
+  --highlight-color: #f0f0f0;
+  --link-color: #0077cc;
+  --link-hover-color: #0055aa;
 }
 
 html,
@@ -58,7 +58,7 @@ li {
   height: auto;
   margin: 1.5rem auto;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 img {
@@ -73,6 +73,10 @@ code {
   font-family: "JetBrains Mono", monospace;
 }
 
+.language-mermaid {
+  background-color: var(--code-bg-color);
+}
+
 div.highlighter-rouge code {
   display: block;
   overflow-x: auto;
@@ -82,40 +86,40 @@ div.highlighter-rouge code {
 }
 
 .highlight {
-  background-color: var(--highlight-color);
+  background-color: #f8f8f8; // Lighter background for better contrast
 
   .c {
-    color: #5f875f;
+    color: #22863a; // Green for comments
   }
   .err {
-    color: #df5f5f;
+    color: #dc3545; // Red for errors
   }
   .k {
-    color: #87afdf;
+    color: #d73a49; // Red for keywords
   }
   .l {
-    color: #d7af5f;
+    color: #005cc5; // Blue for literals
   }
   .n {
-    color: #d0d0d0;
+    color: #24292e; // Dark gray for names
   }
   .o {
-    color: #f0f0f0;
+    color: #24292e; // Dark gray for operators
   }
   .p {
-    color: #b2b2b2;
+    color: #24292e; // Dark gray for punctuation
   }
   .cm {
-    color: #5f875f;
+    color: #22863a; // Green for comment multiline
   }
   .cp {
-    color: #5f875f;
+    color: #22863a; // Green for comment preprocessor
   }
   .c1 {
-    color: #5f875f;
+    color: #22863a; // Green for comment single
   }
   .cs {
-    color: #5f875f;
+    color: #22863a; // Green for comment special
   }
   .ge {
     font-style: italic;
@@ -124,139 +128,157 @@ div.highlighter-rouge code {
     font-weight: bold;
   }
   .kc {
-    color: #87afdf;
+    color: #d73a49; // Red for keyword constant
   }
   .kd {
-    color: #87afdf;
+    color: #d73a49; // Red for keyword declaration
   }
   .kn {
-    color: #df5f5f;
+    color: #d73a49; // Red for keyword namespace
   }
   .kp {
-    color: #87afdf;
+    color: #d73a49; // Red for keyword pseudo
   }
   .kr {
-    color: #87afdf;
+    color: #d73a49; // Red for keyword reserved
   }
   .kt {
-    color: #dfaf5f;
+    color: #d73a49; // Red for keyword type
   }
   .ld {
-    color: #d7af5f;
+    color: #005cc5; // Blue for literal date
   }
   .m {
-    color: #d7af5f;
+    color: #005cc5; // Blue for numbers
   }
   .s {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for strings
   }
   .na {
-    color: #dfdf5f;
+    color: #6f42c1; // Purple for name attribute
   }
   .nb {
-    color: #87dfaf;
+    color: #005cc5; // Blue for name builtin
   }
   .nc {
-    color: #dfaf5f;
+    color: #6f42c1; // Purple for name class
   }
   .no {
-    color: #87afdf;
+    color: #005cc5; // Blue for name constant
   }
   .nd {
-    color: #dfaf5f;
+    color: #6f42c1; // Purple for name decorator
   }
   .ni {
-    color: #dfdf5f;
+    color: #6f42c1; // Purple for name entity
   }
   .ne {
-    color: #df5f5f;
+    color: #d73a49; // Red for name exception
   }
   .nf {
-    color: #87dfaf;
+    color: #6f42c1; // Purple for name function
   }
   .nl {
-    color: #87afdf;
+    color: #005cc5; // Blue for name label
   }
   .nn {
-    color: #d0d0d0;
+    color: #6f42c1; // Purple for name namespace
   }
   .nx {
-    color: #d0d0d0;
+    color: #6f42c1; // Purple for name other
   }
   .py {
-    color: #d0d0d0;
+    color: #005cc5; // Blue for name property
   }
   .nt {
-    color: #df5f5f;
+    color: #d73a49; // Red for name tag
   }
   .nv {
-    color: #87afdf;
+    color: #005cc5; // Blue for name variable
   }
   .ow {
-    color: #f0f0f0;
+    color: #d73a49; // Red for operator word
   }
   .w {
-    color: #d0d0d0;
+    color: #24292e; // Dark gray for whitespace
   }
   .mf {
-    color: #d7af5f;
+    color: #005cc5; // Blue for number float
   }
   .mh {
-    color: #d7af5f;
+    color: #005cc5; // Blue for number hex
   }
   .mi {
-    color: #d7af5f;
+    color: #005cc5; // Blue for number integer
   }
   .mo {
-    color: #d7af5f;
+    color: #005cc5; // Blue for number oct
   }
   .sb {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string backtick
   }
   .sc {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string char
   }
   .sd {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string doc
   }
   .s2 {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string double
   }
   .se {
-    color: #d7af5f;
+    color: #032f62; // Dark blue for string escape
   }
   .sh {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string heredoc
   }
   .si {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string interpol
   }
   .sx {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string other
   }
   .sr {
-    color: #87dfaf;
+    color: #032f62; // Dark blue for string regex
   }
   .s1 {
-    color: #afdf5f;
+    color: #032f62; // Dark blue for string single
   }
   .ss {
-    color: #dfdf5f;
+    color: #032f62; // Dark blue for string symbol
   }
   .bp {
-    color: #87dfaf;
+    color: #005cc5; // Blue for name builtin pseudo
   }
   .vc {
-    color: #87afdf;
+    color: #005cc5; // Blue for name variable class
   }
   .vg {
-    color: #87afdf;
+    color: #005cc5; // Blue for name variable global
   }
   .vi {
-    color: #87afdf;
+    color: #005cc5; // Blue for name variable instance
   }
   .il {
-    color: #d7af5f;
+    color: #005cc5; // Blue for number integer long
+  }
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", monospace;
+
+  &:hover {
+    background-color: var(--button-hover-bg-color);
   }
 }
 

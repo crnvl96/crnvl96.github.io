@@ -5,8 +5,6 @@ title: Nvim Insights - A More Elegant Approach to Autocommands
 custom_js: [copy_code_block, back_to_top_btn]
 ---
 
-<img class="post-img" src="/assets/images/nvim-logo.png" alt="Neovim Logo" width="300" height="200">
-
 Neovim configurations often revolve around _autocommands_ , a well-established feature. Traditionally, developers define autocmds like this:
 
 > You can find more info by typing _:h autocmd_ in yout Neovim session
