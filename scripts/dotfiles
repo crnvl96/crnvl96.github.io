@@ -1,5 +1,6 @@
 ---
 permalink: /dotfiles
+layout: none
 ---
 
 eval "$(wget -qO- https://raw.githubusercontent.com/crnvl96/dotfiles/refs/heads/master/boot.sh)"
