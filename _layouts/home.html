@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home-header">
+  <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Adran Carnavale" class="profile-image">
+  <p>
+    I put here some thoughts about code and life.
+  </p>
+  <p class="social-links">
+    <a href="mailto:adran.carnavale@hey.com">email</a> /
+    <a href="https://www.linkedin.com/in/adrancarnavale/">linkedin</a> /
+    <a href="http://github.com/crnvl96">github</a>
+  </p>
+</div>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-card">
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="post-excerpt">
+      <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+      <a href="{{ post.url | relative_url }}" class="read-more">Read more</a>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

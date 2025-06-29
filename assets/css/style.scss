@@ -1,229 +1,192 @@
 ---
 ---
 
+// --- 1. Global Custom Properties (Gruvbox Dark Theme) ---
+:root {
+  // Gruvbox palette in OKLCH
+  --lch-bg: 29.6% 0.003 98;    // #282828
+  --lch-bg-soft: 32.5% 0.004 88; // #32302f
+  --lch-fg: 88.5% 0.06 97;     // #ebdbb2
+  --lch-gray: 67% 0.04 87;      // #a89984
+  --lch-orange: 59% 0.16 52;    // #d65d0e
+  --lch-aqua: 64% 0.08 153;     // #689d6a
+  --lch-blue: 58% 0.07 197;     // #458588
+  --lch-red: 48% 0.14 26;       // #cc241d
+  --lch-yellow: 76% 0.13 80;    // #d79921
+  --lch-green: 62% 0.11 110;     // #98971a
+  --lch-purple: 58% 0.11 346;    // #b16286
+
+  // Abstracted UI properties
+  --color-background: oklch(var(--lch-bg));
+  --color-text: oklch(var(--lch-fg));
+  --color-text-light: oklch(var(--lch-gray));
+  --color-primary: oklch(var(--lch-orange));
+  --color-link: oklch(var(--lch-aqua));
+  --color-border: oklch(from var(--lch-bg) l += 5%);
+  --color-card-bg: oklch(var(--lch-bg-soft));
+
+  // Layout & Typography
+  --font-family-base: "Berkeley Mono", "Input Mono", monospace;
+  --max-width: 75ch;
+  --border-radius: 8px;
+}
+
+// --- 2. Font Faces ---
 @font-face {
   font-family: "Berkeley Mono";
   src: url("../fonts/Berkeley Mono/BerkeleyMono-Regular.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
-
 @font-face {
   font-family: "Berkeley Mono";
   src: url("../fonts/Berkeley Mono/BerkeleyMono-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-style: normal;
+  font-display: swap;
 }
 
-@font-face {
-  font-family: "Berkeley Mono";
-  src: url("../fonts/Berkeley Mono/BerkeleyMono-Oblique.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Berkeley Mono";
-  src: url("../fonts/Berkeley Mono/BerkeleyMono-Bold-Oblique.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-}
-
+// --- 3. Base & Typography ---
 body {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  font-family: "Berkeley Mono",
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
-    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  max-width: 800px;
-  margin: 50px auto 0 auto;
-  padding: 0 20px;
-  line-height: 1.6;
-  font-size: 20px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  line-height: 1.7;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
 }
 
-h1, strong, b {
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
   font-weight: bold;
+  margin-block: 2.5rem 1rem;
 }
 
-em, i {
-  font-style: italic;
-}
+h1 { font-size: clamp(1.7rem, 5vw, 2.1rem); }
+h2 { font-size: 1.5rem; }
 
-h1 {
-  font-size: 40px;
-  color: #ffffff;
-  margin: 0 0 28px 0;
-}
-
-h2 a,
-p,
-blockquote {
-  color: #cccccc;
-}
-
-h1, strong, b {
-  font-weight: bold;
-}
-
-li {
-  list-style-type: none;
-  line-height: 150%;
-  margin-bottom: 10px;
-}
-
-a:link,
-a:visited {
-  color: #8ab4f8;
+a {
+  color: var(--color-link);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-a:hover,
-a:active {
-  color: #ffffff;
-  text-decoration: underline;
+// --- 4. Layout & Components ---
+.site-header {
+  padding-block: 2rem;
+  margin-block-end: 2rem;
+
+  .site-title {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+  }
 }
 
-nav {
-  margin-bottom: 30px;
-}
+.home-header {
+  text-align: center;
+  margin-block-end: 4rem;
 
-nav a {
-  margin-right: 15px;
-}
-
-/* Post Content Styles */
-article ul {
-  padding-left: 2em;
-}
-
-article li {
-  list-style-type: disc;
-}
-
-blockquote {
-  border-left: 4px solid #444;
-  padding-left: 1em;
-  margin-left: 0;
-  font-style: italic;
-}
-
-/* Post Meta Date */
-.post-meta {
-  font-size: 18px;
-  color: #a0a0a0;
-}
-
-/* Post Navigation */
-.post-nav {
-  margin-top: 3em;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Back to Top Button */
-#back-to-top {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #8ab4f8;
-  color: #1a1a1a;
-  cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 50%;
-  font-size: 20px;
-}
-
-#back-to-top:hover {
-  background-color: #ffffff;
+  .profile-image {
+    inline-size: 96px;
+    block-size: 96px;
+    border-radius: 50%;
+    border: 3px solid var(--color-border);
+    box-shadow: 0 3px 18px oklch(var(--color-shadow) / 0.2);
+    margin-block-end: 1.25rem;
+  }
+  p {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    max-width: 60ch;
+    margin-inline: auto;
+  }
 }
 
 .post-list {
+  list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.post-card {
+  --card-border-color: var(--color-border);
+  position: relative;
+  display: block;
+  background: var(--color-card-bg);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: border-color 150ms ease-out;
+
+  .post-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-block-end: 0.25rem;
 }
 
 .post-link {
-  font-size: 28px;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  font-weight: bold;
 }
 
-code, pre {
-  font-family: "Berkeley Mono", monospace;
+.post-excerpt {
+  margin-block-start: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
 }
 
+.post-content {
+  blockquote {
+    border-inline-start: 3px solid var(--color-border);
+    padding-inline-start: 1.25em;
+    margin-inline-start: 0;
+    font-style: italic;
+    color: var(--color-text-light);
+  }
+}
+
+// --- 5. Feature Queries ---
+@media (any-hover: hover) {
+  a:hover {
+    text-decoration: underline;
+  }
+  .post-card:hover {
+    --card-border-color: var(--color-link);
+  }
+}
+
+// --- 6. Syntax Highlighting (Gruvbox) ---
 .highlight {
-  background: #2e2e2e;
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius);
   padding: 1em;
-  border-radius: 4px;
-  margin-bottom: 1.5em;
-  overflow: auto;
-}
+  margin-block: 1.5em;
+  overflow-x: auto;
+  font-size: 0.9em;
 
-.highlight pre {
-  margin: 0;
+  .c, .cm, .cp, .c1, .cs { color: oklch(var(--lch-gray)); font-style: italic; }
+  .k, .o, .kc, .kd, .kp, .kr, .nt { color: oklch(var(--lch-red)); }
+  .kt, .nb { color: oklch(var(--lch-yellow)); }
+  .m { color: oklch(var(--lch-purple)); }
+  .s { color: oklch(var(--lch-green)); }
+  .na, .nf, .nc { color: oklch(var(--lch-blue)); }
+  .no, .nv, .vc, .vg, .vi { color: oklch(var(--lch-aqua)); }
 }
-
-.highlight .c { color: #999; } /* Comment */
-.highlight .err { color: #a61717; background-color: #e3d2d2; } /* Error */
-.highlight .k { color: #f92672; } /* Keyword */
-.highlight .o { color: #f92672; font-weight: bold; } /* Operator */
-.highlight .cm { color: #999; } /* Comment.Multiline */
-.highlight .cp { color: #999; font-weight: bold; } /* Comment.Preproc */
-.highlight .c1 { color: #999; } /* Comment.Single */
-.highlight .cs { color: #999; font-weight: bold; font-style: italic; } /* Comment.Special */
-.highlight .gd { color: #000; background-color: #fdd; } /* Generic.Deleted */
-.highlight .gd .x { color: #000; background-color: #faa; } /* Generic.Deleted.Specific */
-.highlight .ge { font-style: italic; } /* Generic.Emph */
-.highlight .gr { color: #a00; } /* Generic.Error */
-.highlight .gh { color: #999; } /* Generic.Heading */
-.highlight .gi { color: #000; background-color: #dfd; } /* Generic.Inserted */
-.highlight .gi .x { color: #000; background-color: #afa; } /* Generic.Inserted.Specific */
-.highlight .go { color: #888; } /* Generic.Output */
-.highlight .gp { color: #555; } /* Generic.Prompt */
-.highlight .gs { font-weight: bold; } /* Generic.Strong */
-.highlight .gu { color: #aaa; } /* Generic.Subheading */
-.highlight .gt { color: #a00; } /* Generic.Traceback */
-.highlight .kc { color: #f92672; } /* Keyword.Constant */
-.highlight .kd { color: #f92672; } /* Keyword.Declaration */
-.highlight .kp { color: #f92672; } /* Keyword.Pseudo */
-.highlight .kr { color: #f92672; } /* Keyword.Reserved */
-.highlight .kt { color: #458; } /* Keyword.Type */
-.highlight .m { color: #ae81ff; } /* Literal.Number */
-.highlight .s { color: #e6db74; } /* Literal.String */
-.highlight .na { color: #a6e22e; } /* Name.Attribute */
-.highlight .nb { color: #0086b3; } /* Name.Builtin */
-.highlight .nc { color: #a6e22e; } /* Name.Class */
-.highlight .no { color: #66d9ef; } /* Name.Constant */
-.highlight .ni { color: #800080; } /* Name.Entity */
-.highlight .ne { color: #a6e22e; } /* Name.Exception */
-.highlight .nf { color: #a6e22e; } /* Name.Function */
-.highlight .nn { color: #555; } /* Name.Namespace */
-.highlight .nt { color: #f92672; } /* Name.Tag */
-.highlight .nv { color: #66d9ef; } /* Name.Variable */
-.highlight .ow { font-weight: bold; } /* Operator.Word */
-.highlight .w { color: #bbb; } /* Text.Whitespace */
-.highlight .mf { color: #ae81ff; } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff; } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff; } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff; } /* Literal.Number.Oct */
-.highlight .sb { color: #e6db74; } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74; } /* Literal.String.Char */
-.highlight .sd { color: #e6db74; } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74; } /* Literal.String.Double */
-.highlight .se { color: #e6db74; } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74; } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74; } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74; } /* Literal.String.Other */
-.highlight .sr { color: #009926; } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74; } /* Literal.String.Single */
-.highlight .ss { color: #990073; } /* Literal.String.Symbol */
-.highlight .bp { color: #999; } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #66d9ef; } /* Name.Variable.Class */
-.highlight .vg { color: #66d9ef; } /* Name.Variable.Global */
-.highlight .vi { color: #66d9ef; } /* Name.Variable.Instance */
-.highlight .il { color: #ae81ff; } /* Literal.Number.Integer.Long */
