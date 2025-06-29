@@ -31,7 +31,11 @@ In OOP, we often accept increased complexity in some dimensions of our code to r
 Consider these conditional operators in Ruby:
 
 ```ruby
+a == 0 ? 'zero' : a
 
+# or
+
+'not one' if n != 1
 ```
 
 Every time the style of the code changes, the reader has to make a cognitive effort to understand what’s happening, which hinders readability. By not maintaining a consistent style, we increase the maintenance and comprehension costs of our code without providing equivalent benefits.

@@ -10,4 +10,12 @@ layout: default
   <div>
     {{ content }}
   </div>
+
+  <nav class="post-nav">
+    <a href="{{ "/" | relative_url }}">← Home</a>
+    <a href="{{ "/blog/" | relative_url }}">← Blog</a>
+  </nav>
+
 </article>
+
+<button id="back-to-top" title="Back to top">↑</button>
