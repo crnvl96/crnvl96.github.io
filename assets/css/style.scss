@@ -56,14 +56,14 @@ h1 {
   margin: 0 0 28px 0;
 }
 
-h2 a {
-  text-decoration: none;
+h2 a,
+p,
+blockquote {
   color: #cccccc;
 }
 
-p {
-  font-size: 20px;
-  color: #cccccc;
+h1, strong, b {
+  font-weight: bold;
 }
 
 li {
@@ -91,7 +91,6 @@ nav {
 
 nav a {
   margin-right: 15px;
-  font-size: 20px;
 }
 
 /* Post Content Styles */
@@ -106,7 +105,6 @@ article li {
 blockquote {
   border-left: 4px solid #444;
   padding-left: 1em;
-  color: #ccc;
   margin-left: 0;
   font-style: italic;
 }
@@ -145,23 +143,9 @@ blockquote {
   background-color: #ffffff;
 }
 
-/* Footer */
-footer {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #444;
-  text-align: center;
-  color: #a0a0a0;
-}
-
 .post-list {
   padding: 0;
   margin: 0;
-}
-
-.post-meta {
-  font-size: 14px;
-  color: #a0a0a0;
 }
 
 .post-link {

@@ -5,3 +5,12 @@ kramdown:
 
 include:
   - dotfiles
+
+title: crnvl96
+author: Adran Carnavale
+description: >-
+  Personal blog with thoughts about code and life.
+url: "https://crnvl96.dev"
+
+plugins:
+  - jekyll-feed
