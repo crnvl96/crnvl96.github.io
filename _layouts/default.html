@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <title>{{ page.title | default: "crnvl96.dev" }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="shortcut icon" href="{{ '/assets/images/profile.jpeg' | relative_url }}" type="image/jpeg">
     {%- feed_meta -%}
   </head>
-  <body>
+  <body class="theme-dark">
     <div class="container">
       <header class="site-header">
-        <a class="site-title" href="{{ "/" | relative_url }}">ADRAN CARNAVALE</a>
+        <a class="site-title" href="{{ "/" | relative_url }}">
+          <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Adran Carnavale" class="site-title-image" />
+          ADRAN CARNAVALE
+        </a>
         <nav>
           <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
         </nav>
       </header>
-      <main>
+      <main{% if page.layout == "home" %} class="main-home"{% endif %}>
         {{ content }}
       </main>
     </div>

@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div class="home-header">
-  <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Adran Carnavale" class="profile-image">
   <p>
     I put here some thoughts about code and life.
   </p>
@@ -16,13 +15,14 @@ layout: default
 
 <ul class="post-list">
   {% for post in site.posts %}
-  <li class="post-card">
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="post-excerpt">
-      <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
-      <a href="{{ post.url | relative_url }}" class="read-more">Read more</a>
-    </div>
+  <li>
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <div class="post-link">{{ post.title }}</div>
+      <div class="post-excerpt">
+        <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+      </div>
+    </a>
   </li>
   {% endfor %}
 </ul>
