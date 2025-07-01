@@ -1,7 +1,15 @@
 highlighter: rouge
+
 kramdown:
   input: GFM
+  auto_ids: true
+  hard_wrap: false
   syntax_highlighter: rouge
+  parse_block_html: true
+  parse_span_html: true
+  link_attributes:
+    target: _blank
+    rel: noopener noreferrer
 
 include:
   - dotfiles

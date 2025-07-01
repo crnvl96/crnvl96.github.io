@@ -1,455 +1,472 @@
 ---
 ---
 
-// --- 1. Color Palette: Kanagawa, Lotus & Gruvbox (raw variables only) ---
+// Japandi-inspired minimal color palette
 :root {
-  --sumiInk0: #16161D;
-  --sumiInk1b: #181820;
-  --sumiInk1: #1F1F28;
-  --sumiInk2: #2A2A37;
-  --sumiInk3: #363646;
-  --sumiInk4: #54546D;
-  --waveBlue1: #223249;
-  --waveBlue2: #2D4F67;
-  --winterGreen: #2B3328;
-  --winterYellow: #49443C;
-  --winterRed: #43242B;
-  --winterBlue: #252535;
-  --autumnGreen: #76946A;
-  --autumnRed: #C34043;
-  --autumnYellow: #DCA561;
-  --samuraiRed: #E82424;
-  --roninYellow: #FF9E3B;
-  --waveAqua1: #6A9589;
-  --dragonBlue: #658594;
-  --oldWhite: #C8C093;
-  --fujiWhite: #DCD7BA;
-  --fujiGray: #727169;
-  --springViolet1: #938AA9;
-  --oniViolet: #957FB8;
-  --crystalBlue: #7E9CD8;
-  --springViolet2: #9CABCA;
-  --springBlue: #7FB4CA;
-  --lightBlue: #A3D4D5;
-  --waveAqua2: #7AA89F;
-  --springGreen: #98BB6C;
-  --boatYellow1: #938056;
-  --boatYellow2: #C0A36E;
-  --carpYellow: #E6C384;
-  --sakuraPink: #D27E99;
-  --waveRed: #E46876;
-  --peachRed: #FF5D62;
-  --surimiOrange: #FFA066;
-  --katanaGray: #717C7C;
+  // Core greys
+  --charcoal: #1a1a1a;      // Main background
+  --ink: #2d2d2d;           // Card backgrounds
+  --stone: #3a3a3a;         // Borders, subtle elements
+  --ash: #6a6a6a;           // Muted text
+  --silver: #9a9a9a;        // Meta text
+  --pearl: #e0e0e0;         // Main text
+  --snow: #f5f5f5;          // Bright text
 
-  --dark0-hard: #1d2021;
-  --dark0: #282828;
-  --dark0-soft: #32302f;
-  --dark1: #3c3836;
-  --dark2: #504945;
-  --dark3: #665c54;
-  --dark4: #7c6f64;
-  --gray: #928374;
-  --light0-hard: #f9f5d7;
-  --light0: #fbf1c7;
-  --light0-soft: #f2e5bc;
-  --light1: #ebdbb2;
-  --light2: #d5c4a1;
-  --light3: #bdae93;
-  --light4: #a89984;
-  --bright-red: #fb4934;
-  --bright-green: #b8bb26;
-  --bright-yellow: #fabd2f;
-  --bright-blue: #83a598;
-  --bright-purple: #d3869b;
-  --bright-aqua: #8ec07c;
-  --bright-orange: #fe8019;
-  --neutral-red: #cc241d;
-  --neutral-green: #98971a;
-  --neutral-yellow: #d79921;
-  --neutral-blue: #458588;
-  --neutral-purple: #b16286;
-  --neutral-aqua: #689d6a;
-  --neutral-orange: #d65d0e;
-  --faded-red: #9d0006;
-  --faded-green: #79740e;
-  --faded-yellow: #b57614;
-  --faded-blue: #076678;
-  --faded-purple: #8f3f71;
-  --faded-aqua: #427b58;
-  --faded-orange: #af3a03;
+  // Minimal accent
+  --tea: #8b9574;           // Muted sage green for links
+  --sakura: #9d7d7f;        // Dusty rose for hover states
 
-  /* Lotus/Light Kanagawa */
-  --lotusInk1: #545464;
-  --lotusInk2: #43436c;
-  --lotusGray: #dcd7ba;
-  --lotusGray2: #716e61;
-  --lotusGray3: #8a8980;
-  --lotusWhite0: #d5cea3;
-  --lotusWhite1: #dcd5ac;
-  --lotusWhite2: #e5ddb0;
-  --lotusWhite3: #f2ecbc;
-  --lotusWhite4: #e7dba0;
-  --lotusWhite5: #e4d794;
-  --lotusViolet1: #a09cac;
-  --lotusViolet2: #766b90;
-  --lotusViolet3: #c9cbd1;
-  --lotusViolet4: #624c83;
-  --lotusBlue1: #c7d7e0;
-  --lotusBlue2: #b5cbd2;
-  --lotusBlue3: #9fb5c9;
-  --lotusBlue4: #4d699b;
-  --lotusBlue5: #5d57a3;
-  --lotusGreen: #6f894e;
-  --lotusGreen2: #6e915f;
-  --lotusGreen3: #b7d0ae;
-  --lotusPink: #b35b79;
-  --lotusOrange: #cc6d00;
-  --lotusOrange2: #e98a00;
-  --lotusYellow: #77713f;
-  --lotusYellow2: #836f4a;
-  --lotusYellow3: #de9800;
-  --lotusYellow4: #f9d791;
-  --lotusRed: #c84053;
-  --lotusRed2: #d7474b;
-  --lotusRed3: #e82424;
-  --lotusRed4: #d9a594;
-  --lotusAqua: #597b75;
-  --lotusAqua2: #5e857a;
-  --lotusTeal1: #4e8ca2;
-  --lotusTeal2: #6693bf;
-  --lotusTeal3: #5a7785;
-  --lotusCyan: #d7e3d8;
+  // Code colors (very subtle)
+  --code-bg: #242424;
+  --code-comment: #5a5a5a;
+  --code-keyword: #7a7a7a;
+  --code-string: #6a7a6a;
+  --code-function: #8a8a8a;
 }
 
-// --- 2. Theme Mapping: Use palette for site UI variables ---
-.theme-dark {
-  --color-background: var(--sumiInk1);
-  --color-background-alt: var(--sumiInk2);
-  --color-card-bg: var(--sumiInk2);
-  --color-text: var(--fujiWhite);
-  --color-text-light: var(--oldWhite);
-  --color-border: var(--sumiInk4);
-  --color-link: var(--springBlue);
-  --color-link-hover: var(--sakuraPink);
-
-  --color-title: var(--crystalBlue);
-  --color-h1: var(--crystalBlue);
-  --color-h2: var(--oniViolet);
-  --color-h3: var(--springGreen);
-
-  --color-meta: var(--fujiGray);
-  --color-shadow: var(--waveBlue1);
-
-  --code-bg: var(--sumiInk0);
-  --inline-code: var(--springGreen);
-}
-
-.theme-light {
-  --color-background: var(--lotusWhite3);
-  --color-background-alt: var(--lotusWhite4);
-  --color-card-bg: var(--lotusWhite4);
-  --color-text: var(--lotusInk1);
-  --color-text-light: var(--lotusGray3);
-  --color-border: var(--lotusBlue5);
-  --color-link: var(--lotusBlue5);
-  --color-link-hover: var(--lotusRed);
-
-  --color-title: var(--lotusBlue5);
-  --color-h1: var(--lotusRed);
-  --color-h2: var(--lotusOrange);
-  --color-h3: var(--lotusYellow);
-
-  --color-meta: var(--lotusGray3);
-  --color-shadow: var(--lotusBlue2);
-
-  --code-bg: var(--lotusGray);
-  --inline-code: var(--lotusGreen);
-}
-
-// --- 3. Minimalist Base & Foundation ---
-body {
-  background: var(--color-background);
-  color: var(--color-text);
-  font-family: "Berkeley Mono", "Input Mono", monospace;
-  line-height: 1.7;
-  font-size: 17px;
+// Reset and base
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  position: relative;
-  transition: background 0.3s, color 0.3s;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('../images/1-kanagawa.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.10;
-  filter: saturate(0.7) blur(2px);
+::selection {
+  background-color: var(--stone);
+  color: var(--pearl);
 }
 
+// Typography setup
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, "Inter", "Helvetica Neue", sans-serif;
+  background-color: var(--charcoal);
+  color: var(--pearl);
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+// Container and layout
 .container {
-  max-width: 75ch;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-main {
-  background: var(--color-background-alt, var(--color-background));
-  padding: 1.5rem;
-  margin-block: 2rem;
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  box-shadow: 0 3px 24px 0 oklch(var(--color-shadow) / 0.10);
-  transition: background 0.3s, border 0.3s;
-}
-
-// --- 4. Typography & Headings ---
-h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: bold;
-  margin-block: 2.5rem 1rem;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-}
-h1 { color: var(--color-h1); font-size: clamp(2rem, 6vw, 2.4rem); }
-h2 { color: var(--color-h2); font-size: 1.55rem; }
-h3 { color: var(--color-h3); font-size: 1.22rem;}
-h4, h5, h6 { color: var(--color-title); }
-
-.post-meta {
-  color: var(--color-meta) !important;
-  font-size: 0.8rem;
-  margin-bottom: 0.4rem;
-  opacity: 0.9;
-}
-
-// --- 5. Links ---
-a {
-  color: var(--color-link);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-a:hover, a:focus {
-  color: var(--color-link-hover);
-  text-decoration: underline;
-}
-
-// --- 6. Site Header ---
+// Site header
 .site-header {
-  padding-block: 1rem; // reduced from 2rem
-  padding-inline: 0;
-  margin-block-end: 2rem;
+  padding: 3rem 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid var(--stone);
+  margin-bottom: 3rem;
 
   .site-title {
     display: flex;
     align-items: center;
-    gap: 0.7rem; // space between image and text
-    font-weight: bold;
-    font-size: 1rem;
-    color: var(--color-text);
-    letter-spacing: 0.5px;
+    gap: 0.75rem;
     text-decoration: none;
+    color: var(--pearl);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--snow);
+    }
 
     .site-title-image {
       width: 32px;
       height: 32px;
       border-radius: 50%;
       object-fit: cover;
-      display: inline-block;
-      border: 1.5px solid var(--color-border);
-      box-shadow: none;
-      margin: 0;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    &:hover .site-title-image {
+      filter: grayscale(0%);
+    }
+  }
+
+  nav a {
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--pearl);
     }
   }
 }
 
-// --- 7. Home Header (Profile/About/Social) ---
-.main-home {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
+// Main content area
+main {
+  flex: 1;
+  padding-bottom: 6rem;
 }
 
+// Home page header
 .home-header {
-  text-align: center;
-  margin-block-end: 4rem;
+  margin-bottom: 4rem;
 
   p {
-    color: var(--color-text-light);
-    font-size: 1rem;
-    max-width: 60ch;
-    margin-inline: auto;
-    margin-bottom: 0.3rem;
+    color: var(--silver);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: 300;
   }
 
   .social-links {
-    font-size: 1rem;
-    color: var(--color-text-light);
-    letter-spacing: 0.01em;
-    a {
-      color: var(--color-link);
-      opacity: 0.92;
-      margin-inline: 0.25rem;
-      font-weight: 500;
-      transition: color 0.15s;
+    font-size: 0.875rem;
 
-      &:hover { color: var(--color-link-hover); }
+    a {
+      color: var(--tea);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--sakura);
+      }
     }
   }
 }
 
-// --- 8. Post List & Cards ---
+// Post list
 .post-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1.5rem;
-}
 
-.post-list li {
-  margin: 0;
-  padding: 0;
+  li {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .post-card {
   display: block;
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 1.4rem 1.3rem 1.1rem 1.3rem;
-  box-shadow: 0 2px 8px 0 var(--color-shadow);
+  padding: 2rem 0;
   text-decoration: none;
-  color: var(--color-text);
-  text-align: center;
-  transition: border-color 0.15s, background 0.2s, color 0.15s;
+  border-bottom: 1px solid var(--stone);
+  transition: all 0.2s ease;
+  position: relative;
 
-  .post-link {
-    font-size: 1.18rem;
-    font-weight: 600;
-    letter-spacing: -0.1px;
-    margin: 0.10rem 0 0.1rem 0;
-    color: inherit;
+  // Add a subtle left border indicator on hover instead of shifting text
+  &::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 0;
+    background-color: var(--tea);
+    transition: height 0.2s ease;
+  }
+
+  &:hover {
+    &::before {
+      height: 60%;
+    }
+
+    .post-link {
+      color: var(--snow);
+    }
+
+    .post-meta {
+      color: var(--silver);
+    }
   }
 
   .post-meta {
-    color: var(--color-meta);
-    font-size: 0.8rem;
-    margin-bottom: 0.4rem;
-    opacity: 0.9;
+    font-size: 0.8125rem;
+    color: var(--ash);
+    font-weight: 400;
+    letter-spacing: 0.02em;
     display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .post-link {
+    font-size: 1.25rem;
+    color: var(--pearl);
+    font-weight: 500;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+    display: block;
+    margin-bottom: 0.75rem;
   }
 
   .post-excerpt {
-    color: var(--color-text-light);
-    font-size: 0.97rem;
-    margin-block-start: 0.6rem;
-    line-height: 1.65;
+    p {
+      color: var(--silver);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      font-weight: 400;
+    }
   }
 }
 
-@media (any-hover: hover) {
-  .post-card:hover {
-    border-color: color-mix(in srgb, var(--color-border) 80%, var(--color-link) 20%);
-    background: color-mix(in srgb, var(--color-card-bg) 97%, var(--color-link) 3%);
-    color: var(--color-text);
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .post-card:hover .post-link,
-  .post-card:hover .post-meta,
-  .post-card:hover .post-excerpt {
-    text-decoration: none;
-    color: var(--color-text);
+// Post page
+.post {
+  .post-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--stone);
+
+    .post-title {
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--snow);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .post-meta {
+      color: var(--ash);
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+    }
   }
 }
 
-// --- 9. Post Content & Blocks ---
+// Post content typography
 .post-content {
-  line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1.0625rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--pearl);
+    font-weight: 600;
+    margin: 2.5rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.125rem; }
+
+  p {
+    margin-bottom: 1.5rem;
+    color: var(--silver);
+  }
+
+  a {
+    color: var(--tea);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--sakura);
+    }
+  }
 
   blockquote {
-    border-inline-start: 3.5px solid var(--color-border);
-    padding-inline-start: 1.25em;
-    margin-inline-start: 0;
-    font-style: italic;
-    color: var(--color-text-light);
-    background: color-mix(in srgb, var(--color-card-bg) 85%, var(--color-border) 15%);
-    border-radius: 5px;
+    border-left: 2px solid var(--stone);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+
+    p {
+      color: var(--ash);
+      font-style: italic;
+    }
   }
 
-  code, pre {
-    font-family: "Berkeley Mono", "Input Mono", monospace;
-    font-size: 0.98em;
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--silver);
   }
 
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  // Inline code
   code {
-    color: var(--inline-code);
-    background: color-mix(in srgb, var(--color-card-bg) 88%, var(--inline-code) 12%);
-    border-radius: 5px;
-    padding: 0.1em 0.35em;
+    font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+    font-size: 0.875em;
+    background-color: var(--code-bg);
+    padding: 0.125em 0.375em;
+    border-radius: 3px;
+    color: var(--pearl);
+  }
+
+  // Code blocks
+  pre {
+    background-color: var(--code-bg);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+
+    code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+    }
   }
 }
 
-// --- 10. Syntax Highlighting (for code blocks) ---
+// Minimal syntax highlighting
 .highlight {
-  background: var(--code-bg);
-  border-radius: 7px;
-  padding: 1.1em 1em;
-  margin-block: 1.5em;
+  background-color: var(--code-bg);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 2rem 0;
   overflow-x: auto;
-  font-size: 0.95em;
+  font-size: 0.875rem;
+  line-height: 1.6;
 
-  .c, .cm, .cp, .c1, .cs { color: var(--fujiGray); font-style: italic; }
-  .k, .o, .kc, .kd, .kp, .kr, .nt { color: var(--oniViolet); }
-  .kt, .nb { color: var(--waveAqua2); }
-  .m { color: var(--sakuraPink); }
-  .s { color: var(--springGreen); }
-  .na, .nf, .nc { color: var(--crystalBlue); }
-  .no, .nv, .vc, .vg, .vi { color: var(--carpYellow); }
-}
-
-.highlight .hll,
-.highlight .hl,
-pre code mark {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-// --- 11. Responsive/Adaptive ---
-@media (max-width: 600px) {
-  body, .container, main {
-    padding-inline: 0.5rem !important;
+  // Comments
+  .c, .cm, .cp, .c1, .cs {
+    color: var(--code-comment);
+    font-style: italic;
   }
-  .home-header {
-    inline-size: 64px;
-    block-size: 64px;
+
+  // Keywords
+  .k, .kc, .kd, .kp, .kr, .kt, .kn {
+    color: var(--code-keyword);
   }
-  main {
-    padding: 1rem !important;
+
+  // Strings
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss {
+    color: var(--code-string);
+  }
+
+  // Functions and methods
+  .nf, .nc, .nn, .na {
+    color: var(--code-function);
+  }
+
+  // Numbers
+  .m, .mf, .mh, .mi, .il, .mo, .mb, .mx {
+    color: var(--code-keyword);
+  }
+
+  // Everything else stays default
+  .n, .p, .o, .nl, .nv, .vc, .vg, .vi, .bp, .nb, .no, .nt, .nx {
+    color: var(--silver);
   }
 }
 
-// --- 12. Font Faces ---
-@font-face {
-  font-family: "Berkeley Mono";
-  src: url("../fonts/Berkeley Mono/BerkeleyMono-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-display: swap;
+// Responsive adjustments
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .site-header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .post-header .post-title {
+    font-size: 1.875rem;
+  }
+
+  .post-card {
+    padding: 1.5rem 0;
+
+    // Hide the left border indicator on mobile
+    &::before {
+      display: none;
+    }
+
+    .post-link {
+      font-size: 1.125rem;
+    }
+  }
 }
-@font-face {
-  font-family: "Berkeley Mono";
-  src: url("../fonts/Berkeley Mono/BerkeleyMono-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-display: swap;
+
+// Subtle animations
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  .post-card {
+    animation: slide-up 0.4s ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .post-list li:nth-child(1) .post-card { animation-delay: 0.05s; }
+  .post-list li:nth-child(2) .post-card { animation-delay: 0.1s; }
+  .post-list li:nth-child(3) .post-card { animation-delay: 0.15s; }
+  .post-list li:nth-child(4) .post-card { animation-delay: 0.2s; }
+  .post-list li:nth-child(5) .post-card { animation-delay: 0.25s; }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Remove focus outlines for mouse users, keep for keyboard navigation
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+// Only show focus indicators for keyboard navigation
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--tea);
+  outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .site-header nav,
+  .social-links {
+    display: none;
+  }
 }
