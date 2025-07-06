@@ -4,7 +4,7 @@ title: "When all depends on you"
 date: 2025-06-17
 ---
 
-A few months ago, I had the opportunity to do something for the first time. This text is not a technical report, but rather my personal impressions and reflections on the choices I made, the challenges I faced, and how I overcame them with solutions that resulted in a working piece of software. Of course, I made some mistakes and poor decisions along the way, which I also want to discuss here.
+A few months ago I had the opportunity to do something for the first time. This text is not a technical report, but rather my personal impressions and reflections on the choices I made, the challenges I faced, and how I overcame them with solutions that resulted in a working piece of software. Of course, I made some mistakes and poor decisions along the way, which I also want to discuss here.
 
 The challenge was this: I work on the billing system of a company. Every month, we receive thousands of bill statements that we need to process to keep up with the billing workflow. We have a service with a user interface that our internal team uses to manage all this processing.
 
