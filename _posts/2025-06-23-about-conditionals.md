@@ -8,7 +8,7 @@ While reading [99 Bottles of OOP](https://sandimetz.com/99bottles), I came acro
 
 Consider the following code:
 
-```js
+```javascript
 function getUserRoleLevel(role) {
   if (role === "admin") {
     return 5;
