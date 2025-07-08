@@ -64,12 +64,11 @@ body {
 
 // Site header
 .site-header {
-  padding: 3rem 0 2rem;
+  padding: 3rem 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--stone);
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   .site-title {
     display: flex;
@@ -122,27 +121,27 @@ main {
 
 // Home page header
 .home-header {
-  margin-bottom: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--stone);
 
   p {
     color: var(--silver);
-    font-size: 1.125rem;
+    font-size: 1rem;
+    text-align: left;
     line-height: 1.6;
-    margin-bottom: 1rem;
     font-weight: 300;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
   }
 
-  .social-links {
-    font-size: 0.875rem;
+  a {
+    color: var(--tea);
+    text-decoration: none;
+    transition: color 0.2s ease;
 
-    a {
-      color: var(--tea);
-      text-decoration: none;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: var(--sakura);
-      }
+    &:hover {
+      color: var(--sakura);
     }
   }
 }
@@ -465,8 +464,7 @@ select:focus-visible {
     color: black;
   }
 
-  .site-header nav,
-  .social-links {
+  .site-header nav {
     display: none;
   }
 }
