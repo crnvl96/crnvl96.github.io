@@ -4,8 +4,6 @@ title: "Rediscovers"
 date: 2025-06-23
 ---
 
-> This text was written a few months ago, and I am simply republishing it on this site.
-
 Growing up as perhaps the last generation to have a childhood without access to the internet, I clearly remember the sources of distraction we had available for fun - soccer with friends, biking, some older video games, and books. Of these that I mentioned, aside from the occasional solitary kicks I practiced in my backyard, the only fundamentally solitary enjoyment I had was reading books.
 
 The interesting point is that this statement isn't entirely true. I always found it easy to transport myself to any world described in those pages. I still clearly remember some favorites - books that marked my life and that I revisited many times, because of the unique universe they offered when I was immersed in my reading. I’ve traveled on the Orient Express with Agatha Christie, through New York with the catcher in the rye and the Corleone family, and even through Middle-earth with Frodo Baggins and Smaug.
